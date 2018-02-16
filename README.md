@@ -6,7 +6,7 @@ windows package build for [Persepolis Download Manager]('https://github.com/pers
 
 you can download usually or using git clients, I recommend [git for windows]('https://git-scm.com/download/win')
 
-you can download the stable version from [release page]('https://github.com/persepolisdm/persepolis/releases') or last beta version from the [master branch]('https://github.com/persepolisdm/persepolis/archive/master.zip') after downloading or cloning extract and enter persepolis path, you now should see such this structure
+you can download the stable version from [release page](https://github.com/persepolisdm/persepolis/releases) or last beta version from the [master branch](https://github.com/persepolisdm/persepolis/archive/master.zip) after downloading or cloning extract and enter persepolis path, you now should see such this structure
 ```
 persepolis
 ├── man
@@ -27,5 +27,5 @@ persepolis
 ```
 ## 1-2 python and dependencies
 persepolis is a python program and we need python3 to build it, after freezing and building the package there are no more need python and its library
-so download latest [python3]('https://www.python.org/downloads/windows/') and install it.
+so download latest [python3](https://www.python.org/downloads/windows/) and install it.
 remember the destination directory and enable the **“Add Python 3.6 to PATH” option.**
