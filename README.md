@@ -46,12 +46,52 @@ persepolis is gui for [**Aria2**](https://aria2.github.io) so we need it, you ca
 download and install the [Windows Software Development Kit (SDK)](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk) for Windows 10, we need it for Application Certification Kit API.
 
 # step 2: test and run
-paste **aria2 exe** in test folder near the test.py, and rename it from ‍‍`aria2c_32bit.exe` or `aria2c_64bit.exe` to just `aria2c.exe`
+paste **aria2 exe** in test folder next to the test.py, and rename it from ‍‍`aria2c_32bit.exe` or `aria2c_64bit.exe` to just `aria2c.exe`
 
 with windows cmd or powershell or [git bash](https://git-scm.com/download/win) enter (`cd`) that cloned persepolis directory and run persepolis as test with this command
 
 `python test/test.py`
 
-now persepolis should work completely and perfectly as test and a python script. if you get some trouble or error you may had mistake on these steps or open issue.
+- now persepolis should works completely and perfectly as test and a python script. if you get some trouble or error you may had mistake on these steps or open issue.
 
 # step 3: build and freeze
+now let's build persepolis!
+
+place `version.py` and `persepolis.ico` in perseplois folder.
+
+run Windows cmd or powershell (as Admin) and enter persepolis folder so build persepolis by pyinstaller with this command:
+
+```
+pyinstaller '.\persepolis\Persepolis Download Manager.py'  -p "C:\Program Files (x86)\Windows Kits\10
+\Redist\ucrt\DLLs\x64" -p C:\python35\Lib\site-packages\PyQt5\Qt\bin\ -w -F -i persepolis.ico -n "Persepolis Download Manager
+" --version-file version.py
+```
+
+if you changed **windows SDK** (step 1-4) and **python** (step 1-2) installation directory you should change `-p(path)`
+
+`-w` means it is a windowed app, not a console one.
+
+`-F` Create a one-file bundled executable.
+
+`-i` perseplois icon.
+
+`-n` name of bundled executable.
+
+`--version-file` add persepolis version resource from `version.py` to the exe.
+
+if everything goes ok, you have some output like this
+
+![pyinstaller](screen1.png)
+
+if you get some trouble or error you may had mistake on these steps or open issue.
+
+- after this, you have bundled executable file in dist folder, place `aria2c.exe` next to the `Persepolis Download Manager.exe`. you can run it and test it, it should works perfectly, also you can use it as portable persepolis.
+
+# step 4: create package installer
+you have executable perseplois and you can put it everywhere (next to the `aria2c.exe`) but we going to create a installer for windows
+
+- download and install [Inno Setup](http://www.jrsoftware.org/isdl.php)
+- you can create your installation or use our standard one, I put theme in this repository for both 32 and 64 architecture (`.iss files`). you should edit *`[Files]`* section and *LicenseFile, InfoAfterFile, OutputBaseFilename, SetupIconFile, UninstallDisplayIcon* according to your directory name, also I put license, persepolis readme, after installation text and icon in this repository.
+- build and compile installation if everything goes ok, you have a persepolis installer.
+
+ join it. :blush:
