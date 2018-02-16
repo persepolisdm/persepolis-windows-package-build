@@ -46,7 +46,7 @@ persepolis is gui for [**Aria2**](https://aria2.github.io) so we need it, you ca
 download and install the [Windows Software Development Kit (SDK)](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk) for Windows 10, we need it for Application Certification Kit API.
 
 # step 2: test and run
-paste **aria2 exe** in test folder next to the test.py, and rename it from ‍‍`aria2c_32bit.exe` or `aria2c_64bit.exe` to just `aria2c.exe`
+place **aria2c.exe** in test folder next to the test.py according to your system architecture
 
 with windows cmd or powershell or [git bash](https://git-scm.com/download/win) enter (`cd`) that cloned persepolis directory and run persepolis as test with this command
 
