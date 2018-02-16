@@ -1,7 +1,7 @@
 # persepolis windows package build
 windows package build for [Persepolis Download Manager](https://github.com/persepolisdm/persepolis)
 
-Persepolis team build stable releases safely and you don't need this if you just want use Persepolis Download Manager(you can download stable windows version from [release page](https://github.com/persepolisdm/persepolis/releases), this is a instruction for build persepolis from source for windows.
+Persepolis team build stable releases safely and you don't need this if you just want use Persepolis Download Manager you can download stable windows version from [release page](https://github.com/persepolisdm/persepolis/releases), this is a instruction for build persepolis from source for windows.
 # step 1: Preparing
 - ## 1-1 clone or download [Persepolis](https://github.com/persepolisdm/persepolis)
 
