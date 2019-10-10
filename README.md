@@ -11,6 +11,7 @@ You can download project form our github page or using git clients. I recommend 
 You can download the stable version Source code from [release page](https://github.com/persepolisdm/persepolis/releases) or last git version from the [master branch](https://github.com/persepolisdm/persepolis/archive/master.zip).
 After downloading or cloning, extract and enter persepolis path.
 you can see this structure for directories now.
+
 ```
 persepolis
 ├── man
@@ -18,8 +19,6 @@ persepolis
 │   ├── gui
 │   └── scripts
 ├── resources
-│   ├── Archdroid-Blue
-│   ├── Archdroid-Red
 │   ├── Breeze
 │   ├── Breeze-Dark
 │   ├── locales
@@ -30,7 +29,7 @@ persepolis
 └── xdg
 ```
 
-You also need some file that we put them in this repository and we use them to build persepolis. so clone or download [this repository](https://github.com/mostafaasadi/persepolis-windows-package-build)
+You also need some file that we put them in this repository and we use them to build persepolis. so clone or download [this repository](https://github.com/persepolisdm/persepolis-windows-package-build)
 
 - ## 1-2 python
 persepolis has been written in python so we need python3 to build it, after freezing and building the package there are no more need to python and its library.
@@ -43,13 +42,14 @@ Install these libraries with `pip` from windows **cmd** or **powershell** (*you 
 
 `pip install pyqt5 requests pypiwin32 setproctitle psutil youtube_dl pyinstaller`
 
-Persepolis is gui for [**Aria2**](https://aria2.github.io) so we need it, you can download latest or specific version according to your system from [Aria2 release page](https://github.com/aria2/aria2/releases/) or use one of Aria2 build I put in this repository at aria2 folder (*we will need it ahead*)
+Persepolis is gui for [**Aria2**](https://aria2.github.io) so we need it, you can download latest or specific version according to your system from [Aria2 release page](https://github.com/aria2/aria2/releases/) or use one of Aria2 build ithat I put in this repository at aria2 folder (*we will need it ahead*)
+Persepolis uses ffmpeg for mixing videos([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download ffmpeg yourself or use ffmpeg build in this repository.
 
 - ## 1-4 windows SDK
 Download and install the [Windows Software Development Kit (SDK)](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk) for Windows 10. we need it for Application Certification Kit API.
 
 # step 2: test and run
-Place **aria2c.exe** in test folder next to the test.py according to your system architecture
+Move **aria2c.exe and ffmpeg.exe** to the test folder next to the test.py according to your system architecture
 
 Open power shell or Windows CMD or [git bash](https://git-scm.com/download/win) and Enter cloned persepolis directory with `cd` command. run persepolis as test with this command.  
 
@@ -86,12 +86,12 @@ If everything goes well, you have some output like this
 
 ![pyinstaller](screen1.png)
 
- If you get some error you may had mistake. Open  an issue [here](https://github.com/persepolisdm/persepolis-windows-package-build/issues), We will help you :)
+ If you get error messages, you made mistake. Open  an issue [here](https://github.com/persepolisdm/persepolis-windows-package-build/issues), We will help you :)
  
-- After this, you have bundled executable file in dist folder, place `aria2c.exe` next to the `Persepolis Download Manager.exe`. you can run it and test it, it works perfectly
+- After this, you have bundled executable file in dist folder, Move `ffmpeg.exe` and `aria2c.exe` next to the `Persepolis Download Manager.exe`. you can run it and test it, it works perfectly
 
 # step 4: create package installer
-You have executable perseplois and you can put it everywhere (next to the `aria2c.exe`) but we going to create a installer for windows.
+You have executable perseplois and you can put it everywhere (next to the and `ffmpeg.exe` and `aria2c.exe`) but we going to create a installer for windows.
 
 - Download and install [Inno Setup](http://www.jrsoftware.org/isdl.php)
 - you can create your installation or use our standard one, I put theme in this repository for both 32 and 64 architecture (`.iss files`). you should edit *`[Files]`* section and *LicenseFile, InfoAfterFile, OutputBaseFilename, SetupIconFile, UninstallDisplayIcon* according to your directory name, also I put license, persepolis readme, after installation text and icon in this repository.
