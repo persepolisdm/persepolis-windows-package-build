@@ -4,7 +4,7 @@
 #define MyAppName "Persepolis Download Manager"
 #define MyAppVersion "3.2.0.0"
 #define MyAppPublisher "Persepolis Team"
-#define MyAppURL "https://persepolisdm.github.io"
+#define MyAppURL "https://persepolisdm.github.io/"
 #define MyAppExeName "Persepolis Download Manager.exe"
 
 [Setup]
@@ -23,12 +23,12 @@ DisableDirPage=yes
 DisableProgramGroupPage=yes
 ; The [Icons] "quicklaunchicon" entry uses {userappdata} but its [Tasks] entry has a proper IsAdminInstallMode Check.
 UsedUserAreasWarning=no
-LicenseFile=C:\Users\mosta\Desktop\persepolisarea\installer\LICENSE.txt
-InfoAfterFile=C:\Users\mosta\Desktop\persepolisarea\installer\afterinstallation.txt
-OutputDir=C:\Users\mosta\Desktop\persepolisarea\installer\Output
-OutputBaseFilename=persepolis_3.2.0.0_windows_32bit
-SetupIconFile=C:\Users\mosta\Desktop\persepolisarea\installer\persepolis.ico
-UninstallDisplayIcon=C:\Users\mosta\Desktop\persepolisarea\installer\persepolis.ico
+LicenseFile=resources\LICENSE.txt
+InfoAfterFile=resources\afterinstallation.txt
+OutputDir=Installer
+OutputBaseFilename=persepolis-installer-x86-v{#MyAppVersion}
+SetupIconFile=resources\persepolis.ico
+UninstallDisplayIcon=resources\persepolis.ico
 Compression=lzma2/ultra64
 SolidCompression=yes
 CloseApplications=force
@@ -43,11 +43,11 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 6.1; Check: not IsAdminInstallMode
 
 [Files]
-Source: "C:\Users\mosta\Desktop\persepolisarea\installer\bin\32\Persepolis Download Manager.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\mosta\Desktop\persepolisarea\installer\aria2\32\aria2c.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\mosta\Desktop\persepolisarea\installer\ffmpeg\32\ffmpeg.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\mosta\Desktop\persepolisarea\installer\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\mosta\Desktop\persepolisarea\installer\README.md"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\Persepolis Download Manager.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "resources\aria2\32\aria2c.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "resources\ffmpeg\32\ffmpeg.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "resources\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "resources\README.md"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

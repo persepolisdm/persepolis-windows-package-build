@@ -1,0 +1,5 @@
+PyQt5
+PyQt3D
+requests
+pypiwin32
+youtube_dl

@@ -1,100 +1,157 @@
-# Persepolis MicroSoft Windows package build
-windows package build for [Persepolis Download Manager](https://github.com/persepolisdm/persepolis)
+# Persepolis Microsoft Windows package build
 
-We build stable releases safely and you don't need to build it yourself. You can download Persepolis Download Manager for  Microsoft Windows from [release page](https://github.com/persepolisdm/persepolis/releases).
-If you want to build Persepolis for Windows yourself, then this instruction can help you.
-# step 1: Preparing
-- ## 1-1 clone or download [Persepolis](https://github.com/persepolisdm/persepolis)
+If you just want to use persepolis as a download manager you don't need to build it yourself.  
+**We build and provide Windows installers from the latest stable version of persepolis for both 32 and 64 bits versions which are available in [release page](https://github.com/persepolisdm/persepolis/releases).**
 
-You can download project form our github page or using git clients. I recommend [git for windows](https://git-scm.com/download/win)
+But If you are interested to:
 
-You can download the stable version Source code from [release page](https://github.com/persepolisdm/persepolis/releases) or last git version from the [master branch](https://github.com/persepolisdm/persepolis/archive/master.zip).
-After downloading or cloning, extract and enter persepolis path.
-you can see this structure for directories now.
+- install persepolis as an script
+- modify persepolis source code and see results of your changes easily
+- build a executable or installer for Windows from your customized version of Persepolis
+
+then this instruction could help you.
+
+Some notes before we begins:
+- You must have admin privilege to install and run softwares.
+- `powershell` and `cmd` are the same for this instruction. From now we just call them both a `terminal`. We recommend to use `powershell`.
+- We suppose you know how to use one of these terminals to do simple operations such as copy, change directory and run python scripts.
+- Commands in following sections are for 64 bits version of Windows. But the instruction could be applied for 32 bits version too with some modification. 
+- It is easier to follow this instruction if you have a copy (or clone) of this repository and persepolis. You can download latest versions in zip format from these urls:
+    - [this repository](https://github.com/persepolisdm/persepolis-windows-package-build/archive/master.zip)
+    - [persepolis](https://github.com/persepolisdm/persepolis/archive/master.zip)
+- If you do not want to contribute to this repository or persepolis itself then `git` is not necessary. But we recommend using git to clone. If you clone these two projects with git you will access to previous versions and other branches too. Also every time a change is committed to persepolis or this repository, you don't need to get a new whole copy of these two. You just need to pull changes to your clones. It saves time and internet traffic.
+
+
+<hr/>
+
+# Run persepolis from script
+
+## Clone this repository and persepolis
+
+We are going to clone this repository to a folder named `pdm-windows` and clone persepolis inside this folder.  
+Open a terminal and change directory to your workspace. Then:
+
+```powershell
+git clone https://github.com/persepolisdm/persepolis-windows-package-build.git pdm-windows
+pushd pdm-windows
+git clone https://github.com/persepolisdm/persepolis
+```
+
+Now you must have this folder structure:
 
 ```
-persepolis
-├── man
-├── persepolis
-│   ├── gui
-│   └── scripts
+pdm-windows
+├── img
 ├── resources
-│   ├── Breeze
-│   ├── Breeze-Dark
-│   ├── locales
-│   ├── Papirus
-│   ├── Papirus-Dark
-│   └── Papirus-Light
-├── test
-└── xdg
+|   ├── aria2
+|   ├── ffmpeg
+|   └──...
+├── persepolis
+|   ├── ...
+|   ├── persepolis
+|   ├── ...
+|   ├── test
+|   └──...
+└──...
 ```
 
-You also need some file that we put them in this repository and we use them to build persepolis. so clone or download [this repository](https://github.com/persepolisdm/persepolis-windows-package-build)
+## Get or install dependencies
 
-- ## 1-2 python
-persepolis has been written in python so we need python3 to build it, after freezing and building the package there are no more need to python and its library.
-Download latest [python3](https://www.python.org/downloads/windows/) and install it.
+Before we can run Persepolis we need to get some binaries.  
+Persepolis is written in `python 3` and needs `aria2` and `ffmpeg` to run.  
+If you cloned this repository, there are `aria2` and `ffmpeg` binaries in `resource` folder for 32 and 64 bit architecture. These binaries might not be the latest versions but they work fine. If you are interested to use the latest version, you can get it from [aria2 official website](https://aria2.github.io) and [ffmpeg official website](https://www.ffmpeg.org/).  
 
-**remember** the **destination directory** and enable the **“Add Python 3.7 to PATH” option.**
+Get the latest Windows `python 3` installer for your architecture from [official python website](https://www.python.org/downloads/) and run the executable. We recommend change default installation directory to a shorter path like `C:\python3` and enable `Add Python 3.x to PATH`. To verify successful installation, open a windows terminal and run these commands:
 
-- ## 1-3 dependencies & libraries
-Install these libraries with `pip` from windows **cmd** or **powershell** (*you should run pip as Admin*)
-
-`pip install pyqt5 requests pypiwin32 setproctitle psutil youtube_dl pyinstaller`
-
-Persepolis is gui for [**Aria2**](https://aria2.github.io) so we need it, you can download latest or specific version according to your system from [Aria2 release page](https://github.com/aria2/aria2/releases/) or use one of Aria2 build ithat I put in this repository at aria2 folder (*we will need it ahead*)
-Persepolis uses [ffmpeg](https://www.ffmpeg.org/) for mixing videos([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download [ffmpeg](https://ffmpeg.zeranoe.com/builds/) yourself or use ffmpeg build in this repository.
-
-- ## 1-4 windows SDK
-Download and install the [Windows Software Development Kit (SDK)](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk) for Windows 10. we need it for Application Certification Kit API.
-
-# step 2: test and run
-Move **aria2c.exe and ffmpeg.exe** to the test folder next to the test.py according to your system architecture
-
-Open power shell or Windows CMD or [git bash](https://git-scm.com/download/win) and Enter cloned persepolis directory with `cd` command. run persepolis as test with this command.  
-
-`python test/test.py`
-
-- now persepolis should run as a python script. If you get some error you may had mistake. Open  an issue [here](https://github.com/persepolisdm/persepolis-windows-package-build/issues), We will help you :)
-
-# step 3: build and freeze
-Now let's build persepolis!
-
-place `version.py` and `persepolis.ico` in perseplois folder.
-
-run Windows cmd or powershell (as Admin) and enter persepolis folder so build persepolis by pyinstaller with this command:
-
-```
-pyinstaller '.\persepolis\Persepolis Download Manager.py'  -p "C:\Program Files (x86)\Windows Kits\10
-\Redist\ucrt\DLLs\x64" -p C:\python35\Lib\site-packages\PyQt5\Qt\bin\ -w -F -i persepolis.ico -n "Persepolis Download Manager
-" --version-file version.py
+```shell
+python --version
+pip --version
 ```
 
-If you changed **windows SDK** (step 1-4) and **python** (step 1-2) installation directory you should change `-p(path)`
+If there is no problem, you are ready to run persepolis as a scripts. Persepolis uses third party libraries that can be installed by python package manager `pip`.  
 
-`-w` means it is a windowed app, not a console one.
+If you cloned this repository, you can open a windows terminal here and run this command to install these libraries:
 
-`-F` Create a one-file bundled executable.
+```powershell
+pip install -r requirements.txt
+```
 
-`-i` perseplois icon.
+Otherwise use this command:
 
-`-n` name of bundled executable.
+```shell
+pip install PyQt5 PyQt3D requests pypiwin32 psutil youtube_dl
+```
 
-`--version-file` add persepolis version resource from `version.py` to the exe.
+## Run persepolis
 
-If everything goes well, you have some output like this
+To test if persepolis runs with no problem, open a terminal in here (`pdm-windows` folder) and copy appropriate `aria2c.exe` and `ffmpeg.exe` to `test` folder in persepolis clone. Then run test script provided by persepolis package. Use following commands:
 
-![pyinstaller](screen1.png)
+```powershell
+copy .\resources\aria2\64\aria2c.exe .\persepolis\test\
+copy .\resources\ffmpeg\64\ffmpeg.exe .\persepolis\test\
+pushd .\persepolis\test
+python .\test.py
+```
 
- If you get error messages, you made mistake. Open  an issue [here](https://github.com/persepolisdm/persepolis-windows-package-build/issues), We will help you :)
+If there is no problem then you can move on to next section.
 
-- After this, you have bundled executable file in dist folder, Move `ffmpeg.exe` and `aria2c.exe` next to the `Persepolis Download Manager.exe`. you can run it and test it, it works perfectly
+<hr/>
 
-# step 4: create package installer
-You have executable perseplois and you can put it everywhere (next to the and `ffmpeg.exe` and `aria2c.exe`) but we going to create a installer for windows.
+# Build an executable from persepolis
 
-- Download and install [Inno Setup](http://www.jrsoftware.org/isdl.php)
-- you can create your installation or use our standard one, I put theme in this repository for both 32 and 64 architecture (`.iss files`). you should edit *`[Files]`* section and *LicenseFile, InfoAfterFile, OutputBaseFilename, SetupIconFile, UninstallDisplayIcon* according to your directory name, also I put license, persepolis readme, after installation text and icon in this repository.
-- Build and compile installation if everything goes well, you have a persepolis installer.
+##  Install development dependencies:
+
+We use `pyinstaller` to create an executable from persepolis source code. It is a third party python package and can be installed with `pip`:
+
+```powershell
+pip install pyinstaller
+```
+
+Also we need Windows Software Development Kit for Application Certification Kit API.  
+For example you can download the latest Windows 10 SDK [from this instruction](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk).  
+Also a list of previous versions of Windows SDK is available [here](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+
+## Build
+
+Open a terminal as administrator in here (`pdm-windows`) and run this command:
+```powershell
+pyinstaller ".\persepolis\persepolis\Persepolis Download Manager.py"  -p "C:\Program Files (x86)\Windows Kits\10\Redist\ucrt\DLLs\x64" -p "C:\python3\Lib\site-packages\PyQt5\Qt\bin\" -i ".\resources\persepolis.ico" --version-file ".\resources\version.py" -w -F -n "Persepolis Download Manager"
+```
+
+Just for your information:
+- `-w` means it is a windowed app, not a console one.
+- `-F` creates a one-file bundled executable.
+- `-i` is pointing to persepolis icon.
+- `-n` name of bundled executable.
+- `--version-file` adds persepolis version resource from `resources/version.py` to the exe.
+
+If you changed python and windows sdk installation path, you must change paths in command above to point to correct paths.
+
+If everything goes well, you have some output like this:
+
+![pyinstaller](img/pyinstaller-output.png)
+
+After this, you have bundled executable file in a pyinstaller created `dist` folder.  
+Move appropriate `ffmpeg.exe` and `aria2c.exe` next to the `Persepolis Download Manager.exe` in `dist` folder. You can run it and test if it is working.
+
+You can use this `dist` folder containing these 3 binaries as your final Persepolis Download Manager application. But if you want to be able install it permanently follow next section.
+
+<hr/>
+
+# Create Package installer for Persepolis Download Manager
+
+We use [Inno Setup](http://www.jrsoftware.org/isdl.php) to make an installer. Download and install Inno.
+
+You can create your installer instruction script from scratch.  
+Or use our scripts provided in this repository (`.iss files`).  
+Open one of `.iss` file compatible with your architecture by Inno Setup. Then use compile button.  
+If everything goes well, you have a persepolis installer created in `Installer` directory.
 
  Enjoy it. :blush:
+
+<hr/>
+
+ # TODO:
+ - Instruction about editable installation
+ - Provide script to automate some steps
+ 

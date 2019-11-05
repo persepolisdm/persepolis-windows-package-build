@@ -1,0 +1,10 @@
+# source folder of persepolis
+persepolis
+
+# Folder for output of Inno Setup
+Installer
+
+# pyinstaller
+build
+dist
+*.spec
