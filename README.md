@@ -35,7 +35,7 @@ You also need some file that we put them in this repository and we use them to b
 persepolis has been written in python so we need python3 to build it, after freezing and building the package there are no more need to python and its library.
 Download latest [python3](https://www.python.org/downloads/windows/) and install it.
 
-**remember** the **destination directory** and enable the **“Add Python 3.6 to PATH” option.**
+**remember** the **destination directory** and enable the **“Add Python 3.7 to PATH” option.**
 
 - ## 1-3 dependencies & libraries
 Install these libraries with `pip` from windows **cmd** or **powershell** (*you should run pip as Admin*)
@@ -43,7 +43,7 @@ Install these libraries with `pip` from windows **cmd** or **powershell** (*you 
 `pip install pyqt5 requests pypiwin32 setproctitle psutil youtube_dl pyinstaller`
 
 Persepolis is gui for [**Aria2**](https://aria2.github.io) so we need it, you can download latest or specific version according to your system from [Aria2 release page](https://github.com/aria2/aria2/releases/) or use one of Aria2 build ithat I put in this repository at aria2 folder (*we will need it ahead*)
-Persepolis uses ffmpeg for mixing videos([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download ffmpeg yourself or use ffmpeg build in this repository.
+Persepolis uses [ffmpeg](https://www.ffmpeg.org/) for mixing videos([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download [ffmpeg](https://ffmpeg.zeranoe.com/builds/) yourself or use ffmpeg build in this repository.
 
 - ## 1-4 windows SDK
 Download and install the [Windows Software Development Kit (SDK)](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk) for Windows 10. we need it for Application Certification Kit API.
@@ -87,7 +87,7 @@ If everything goes well, you have some output like this
 ![pyinstaller](screen1.png)
 
  If you get error messages, you made mistake. Open  an issue [here](https://github.com/persepolisdm/persepolis-windows-package-build/issues), We will help you :)
- 
+
 - After this, you have bundled executable file in dist folder, Move `ffmpeg.exe` and `aria2c.exe` next to the `Persepolis Download Manager.exe`. you can run it and test it, it works perfectly
 
 # step 4: create package installer
