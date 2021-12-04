@@ -19,8 +19,8 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={commonpf}\{#MyAppName}
-DisableDirPage=yes
-DisableProgramGroupPage=yes
+DisableDirPage=auto
+DisableProgramGroupPage=auto
 ; The [Icons] "quicklaunchicon" entry uses {userappdata} but its [Tasks] entry has a proper IsAdminInstallMode Check.
 UsedUserAreasWarning=no
 LicenseFile=C:\Users\mosta\Desktop\persepolisarea\installer\LICENSE.txt
