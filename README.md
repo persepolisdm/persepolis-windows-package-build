@@ -65,9 +65,7 @@ place `version.py` and `persepolis.ico` in perseplois folder.
 run Windows cmd or powershell (as Admin) and enter persepolis folder so build persepolis by pyinstaller with this command:
 
 ```
-pyinstaller '.\persepolis\Persepolis Download Manager.py'  -p "C:\Program Files (x86)\Windows Kits\10
-\Redist\ucrt\DLLs\x64" -p C:\python35\Lib\site-packages\PyQt5\Qt\bin\ -w -F -i persepolis.ico -n "Persepolis Download Manager
-" --version-file version.py
+pyinstaller ".\persepolis\Persepolis Download Manager.py" -p "C:\Program Files (x86)\Windows Kits\10\Redist\ucrt\DLLs\x64" -p C:\python35\Lib\site-packages\PyQt5\Qt\bin\ -w -F -i persepolis.ico -n "Persepolis Download Manager" --version-file version.py
 ```
 
 If you changed **windows SDK** (step 1-4) and **python** (step 1-2) installation directory you should change `-p(path)`
