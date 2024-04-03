@@ -40,10 +40,11 @@ Download latest [python3](https://www.python.org/downloads/windows/) and install
    `pip install PySide6 requests pypiwin32 setproctitle psutil yt_dlp pyinstaller`
 
  - Persepolis is gui for [**Aria2**](https://aria2.github.io) so we need it, you can download latest or specific version according to your system from [Aria2 release page](https://github.com/aria2/aria2/releases/)
- - Persepolis uses [ffmpeg](https://www.ffmpeg.org/) for mixing videos ([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download [ffmpeg](https://ffmpeg.zeranoe.com/builds](https://github.com/BtbN/FFmpeg-Builds/releases)/) (we use latest gpl version).
+ - Persepolis uses [**ffmpeg**](https://www.ffmpeg.org/) for mixing videos ([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download [ffmpeg](https://ffmpeg.zeranoe.com/builds](https://github.com/BtbN/FFmpeg-Builds/releases)/) (we use latest gpl version).
+ - Persepolis uses [**sthp**](https://github.com/KaranGauswami/socks-to-http-proxy/) to enable socks proxy option, so download the binary from [releases page](https://github.com/KaranGauswami/socks-to-http-proxy/releases)
 
 # step 2: test and run
-Move **aria2c.exe** and **ffmpeg.exe** to the test folder next to the test.py according to your system architecture
+Move **aria2c.exe**, **sthp.exe** and **ffmpeg.exe** to the test folder next to the test.py according to your system architecture
 
 Open Windows terminal and Enter cloned persepolis directory with `cd` command. run persepolis as test with this command.  
 
@@ -54,12 +55,18 @@ Open Windows terminal and Enter cloned persepolis directory with `cd` command. r
 # step 3: build and freeze
 Now let's build persepolis!
 
-place `version.py` (need updates) and `persepolis.ico` in perseplois folder.
+place `version.py` (need updates) and `persepolis` icons in perseplois folder.
 
-run Windows terminal and enter persepolis folder so build persepolis by pyinstaller with this command:
+run Windows terminal and enter persepolis folder so build Pesrpolis browser integration by pyinstaller with this command:
 
 ```
- pyinstaller '.\persepolis\Persepolis Download Manager.py' -F -w -i persepolis.ico -n "Persepolis Download Manager" --version-file version.py --clean
+pyinstaller '.\resources\PersepolisBI.py' -F -i persepolis2.ico -n "PersepolisBI" --version-file version.py --clean
+```
+
+and build persepolis with this command:
+
+```
+ pyinstaller '.\persepolis\Persepolis Download Manager.py' -F -w -i persepolis1.ico -n "Persepolis Download Manager" --version-file version.py --clean
 ```
 
 `-w` means it is a windowed app, not a console one.
@@ -78,10 +85,10 @@ If everything goes well, you have some output like this
 
  If you get error messages, you made mistake. Open  an issue [here](https://github.com/persepolisdm/persepolis-windows-package-build/issues), We will help you :)
 
-- After this, you have bundled executable file in dist folder, Move `ffmpeg.exe` and `aria2c.exe` next to the `Persepolis Download Manager.exe`. you can run it and test it, it works perfectly
+- After this, you have bundled executable file in dist folder, Move `ffmpeg.exe`, `sthp.exe` and `aria2c.exe` next to the `Persepolis Download Manager.exe`. you can run it and test it, it works perfectly
 
 # step 4 (Optional): create package installer
-You have executable perseplois and you can put it everywhere (next to the and `ffmpeg.exe` and `aria2c.exe`) but we going to create a installer for windows.
+You have executable perseplois and you can put it everywhere (next to the and `ffmpeg.exe`, `sthp.exe` and `aria2c.exe`) but we going to create a installer for windows.
 
 - Download and install [Inno Setup](http://www.jrsoftware.org/isdl.php)
 - you can create your installation or use our standard one, I put theme in this repository for both 32 and 64 architecture (`.iss files`). you should edit *`[Files]`* section and *LicenseFile, InfoAfterFile, OutputBaseFilename, SetupIconFile, UninstallDisplayIcon* according to your directory name, also I put license, persepolis readme, after installation text and icon in this repository.
