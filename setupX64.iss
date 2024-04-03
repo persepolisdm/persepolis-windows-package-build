@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Persepolis Download Manager"
-#define MyAppVersion "3.2.0.1"
+#define MyAppVersion "4.0.1.0"
 #define MyAppPublisher "Persepolis Team"
 #define MyAppURL "https://persepolisdm.github.io/"
 #define MyAppExeName "Persepolis Download Manager.exe"
@@ -26,7 +26,7 @@ UsedUserAreasWarning=no
 LicenseFile=C:\Users\mosta\Desktop\persepolisarea\installer\LICENSE.txt
 InfoAfterFile=C:\Users\mosta\Desktop\persepolisarea\installer\afterinstallation.txt
 OutputDir=C:\Users\mosta\Desktop\persepolisarea\installer\Output
-OutputBaseFilename=persepolis_3.2.0.0_windows_64bit
+OutputBaseFilename=persepolis_4.0.1.0_windows_64bit
 SetupIconFile=C:\Users\mosta\Desktop\persepolisarea\installer\persepolis.ico
 UninstallDisplayIcon=C:\Users\mosta\Desktop\persepolisarea\installer\persepolis.ico
 Compression=lzma2/ultra64
@@ -44,7 +44,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 6.1; Check: not IsAdminInstallMode
 
 [Files]
-Source: "C:\Users\mosta\Desktop\persepolisarea\persepolis\dist\Persepolis Download Manager.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\mosta\Desktop\persepolisarea\installer\bin\64\Persepolis Download Manager.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\mosta\Desktop\persepolisarea\installer\aria2\64\aria2c.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\mosta\Desktop\persepolisarea\installer\ffmpeg\64\ffmpeg.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\mosta\Desktop\persepolisarea\installer\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
