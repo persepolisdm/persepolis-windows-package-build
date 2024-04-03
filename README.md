@@ -6,7 +6,7 @@ If you want to build Persepolis for Windows yourself, then this instruction can 
 # step 1: Preparing
 - ## 1-1 clone or download [Persepolis](https://github.com/persepolisdm/persepolis)
 
-You can download project form our github page or using git clients.
+You can download project from our github page or using git clients.
 
 You can download the stable version Source code from [release page](https://github.com/persepolisdm/persepolis/releases) or last git version from the [master branch](https://github.com/persepolisdm/persepolis/archive/master.zip).
 After downloading or cloning, extract and enter persepolis path.
@@ -23,7 +23,13 @@ persepolis
 └── xdg
 ```
 
-You also need some file that we put them in this repository and we use them to build persepolis. so clone or download [this repository](https://github.com/persepolisdm/persepolis-windows-package-build)
+You also need some file that we put them in this repository and we use them to build persepolis. so clone or download [this repository](https://github.com/persepolisdm/persepolis-windows-package-build) alongside persepolis directory, we should have this structure finally:
+
+```
+persepolisarea
+├── persepolis-windows-package-build
+└── persepolis
+```
 
 - ## 1-2 python
 persepolis has been written in python so we need python3 to build it, after freezing and building the package there are no more need to python and its library.
@@ -46,7 +52,7 @@ Download latest [python3](https://www.python.org/downloads/windows/) and install
 # step 2: test and run
 Move **aria2c.exe**, **sthp.exe** and **ffmpeg.exe** to the test folder next to the test.py according to your system architecture
 
-Open Windows terminal and Enter cloned persepolis directory with `cd` command. run persepolis as test with this command.  
+Open Windows terminal and Enter cloned persepolis directory with `cd` command and active env. run persepolis as test with this command.  
 
 `python test/test.py`
 
@@ -55,18 +61,16 @@ Open Windows terminal and Enter cloned persepolis directory with `cd` command. r
 # step 3: build and freeze
 Now let's build persepolis!
 
-place `version.py` (need updates) and `persepolis` icons in perseplois folder.
-
-run Windows terminal and enter persepolis folder so build Pesrpolis browser integration by pyinstaller with this command:
+run Windows terminal and enter persepolis folder and active env, so build Pesrpolis browser integration by pyinstaller with this command:
 
 ```
-pyinstaller '.\resources\PersepolisBI.py' -F -i persepolis2.ico -n "PersepolisBI" --version-file version.py --clean
+pyinstaller '.\resources\PersepolisBI.py' -F -i '..\persepolis-windows-package-build\persepolis2.ico' -n "PersepolisBI" --version-file '..\persepolis-windows-package-build\bi_version.py' --clean
 ```
 
 and build persepolis with this command:
 
 ```
- pyinstaller '.\persepolis\Persepolis Download Manager.py' -F -w -i persepolis1.ico -n "Persepolis Download Manager" --version-file version.py --clean
+pyinstaller '.\persepolis\Persepolis Download Manager.py' -F -w -i '..\persepolis-windows-package-build\persepolis1.ico' -n "Persepolis Download Manager" --version-file '..\persepolis-windows-package-build\version.py' --clean
 ```
 
 `-w` means it is a windowed app, not a console one.
