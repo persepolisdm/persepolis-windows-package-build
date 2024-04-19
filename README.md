@@ -89,10 +89,10 @@ If everything goes well, you have some output like this
 
  If you get error messages, you made mistake. Open  an issue [here](https://github.com/persepolisdm/persepolis-windows-package-build/issues), We will help you :)
 
-- After this, you have bundled executable file in dist folder, Move `ffmpeg.exe`, `sthp.exe` and `aria2c.exe` next to the `Persepolis Download Manager.exe`. you can run it and test it, it works perfectly
+- After this, you have bundled executable file in dist folder, Move `ffmpeg.exe`, `PersepolisBI.exe`, `sthp.exe` and `aria2c.exe` next to the `Persepolis Download Manager.exe`. you can run it and test it, it works perfectly
 
 # step 4 (Optional): create package installer
-You have executable perseplois and you can put it everywhere (next to the and `ffmpeg.exe`, `sthp.exe` and `aria2c.exe`) but we going to create a installer for windows.
+You have executable perseplois and you can put it everywhere (next to the and `ffmpeg.exe`, `PersepolisBI`, `sthp.exe` and `aria2c.exe`) but we going to create a installer for windows.
 
 - Download and install [Inno Setup](http://www.jrsoftware.org/isdl.php)
 - you can create your installation or use our standard one, I put theme in this repository for both 32 and 64 architecture (`.iss files`). you should edit *`[Files]`* section and *LicenseFile, InfoAfterFile, OutputBaseFilename, SetupIconFile, UninstallDisplayIcon* according to your directory name, also I put license, persepolis readme, after installation text and icon in this repository.
