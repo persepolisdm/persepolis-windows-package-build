@@ -46,7 +46,7 @@ Download latest [python3](https://www.python.org/downloads/windows/) and install
    `pip install PySide6 requests pypiwin32 setproctitle psutil yt_dlp pyinstaller`
 
  - Persepolis is gui for [**Aria2**](https://aria2.github.io) so we need it, you can download latest or specific version according to your system from [Aria2 release page](https://github.com/aria2/aria2/releases/)
- - Persepolis uses [**ffmpeg**](https://www.ffmpeg.org/) for mixing videos ([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download [ffmpeg](https://ffmpeg.zeranoe.com/builds](https://github.com/BtbN/FFmpeg-Builds/releases)/) (we use latest gpl version).
+ - Persepolis uses [**ffmpeg**](https://www.ffmpeg.org/) for mixing videos ([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download [ffmpeg](https://github.com/BtbN/FFmpeg-Builds/releases) (we use latest gpl version).
  - Persepolis uses [**sthp**](https://github.com/KaranGauswami/socks-to-http-proxy/) to enable socks proxy option, so download the binary from [releases page](https://github.com/KaranGauswami/socks-to-http-proxy/releases)
 
 # step 2: test and run
