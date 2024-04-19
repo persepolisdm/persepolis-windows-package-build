@@ -35,7 +35,7 @@ persepolisarea
 persepolis has been written in python so we need python3 to build it, after freezing and building the package there are no more need to python and its library.
 Download latest [python3](https://www.python.org/downloads/windows/) and install it.
 
-**remember** the **destination directory** and enable the **“Add Python to PATH” option.**
+ **remember** the **destination directory** and enable the **“Add Python to PATH” option.**
 
 - ## 1-3 dependencies & libraries
  - Install virtualenv with `pip install virtualenv` From windows terminal (**powershell**)
