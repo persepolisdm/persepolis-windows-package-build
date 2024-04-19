@@ -1,7 +1,7 @@
 VSVersionInfo(
   ffi=FixedFileInfo(
-    filevers=(4, 0, 1, 0),
-    prodvers=(4, 0, 1, 0),
+    filevers=(4, 1, 0, 0),
+    prodvers=(4, 1, 0, 0),
     mask=0x3f,
     flags=0x0,
     OS=0x40004,
@@ -16,12 +16,12 @@ VSVersionInfo(
         u'040904B0',
         [StringStruct(u'CompanyName', u'Persepolis Team'),
         StringStruct(u'FileDescription', u'Persepolis Download Manager'),
-        StringStruct(u'FileVersion', u'4.0.1.0'),
+        StringStruct(u'FileVersion', u'4.1.0.0'),
         StringStruct(u'InternalName', u'Persepolis Download Manager'),
         StringStruct(u'LegalCopyright', u'\xa9 GNU General Public License v3.0'),
         StringStruct(u'OriginalFilename', u'Persepolis Download Manager.exe'),
         StringStruct(u'ProductName', u'Persepolis Download Manager'),
-        StringStruct(u'ProductVersion', u'4.0.1.0')])
+        StringStruct(u'ProductVersion', u'4.1.0.0')])
       ]),
     VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
   ]
