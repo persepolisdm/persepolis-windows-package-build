@@ -1,4 +1,4 @@
-# Persepolis MicroSoft Windows package build
+# Persepolis Microsoft Windows package build
 windows package build for [Persepolis Download Manager](https://github.com/persepolisdm/persepolis)
 
 We build stable releases safely and you don't need to build it yourself. You can download Persepolis Download Manager for  Microsoft Windows from [release page](https://github.com/persepolisdm/persepolis/releases).
