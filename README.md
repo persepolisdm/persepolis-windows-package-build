@@ -1,4 +1,4 @@
-# Persepolis MicroSoft Windows package build
+# Persepolis Microsoft Windows package build
 windows package build for [Persepolis Download Manager](https://github.com/persepolisdm/persepolis)
 
 We build stable releases safely and you don't need to build it yourself. You can download Persepolis Download Manager for  Microsoft Windows from [release page](https://github.com/persepolisdm/persepolis/releases).
@@ -35,7 +35,7 @@ persepolisarea
 persepolis has been written in python so we need python3 to build it, after freezing and building the package there are no more need to python and its library.
 Download latest [python3](https://www.python.org/downloads/windows/) and install it.
 
-**remember** the **destination directory** and enable the **“Add Python to PATH” option.**
+ **remember** the **destination directory** and enable the **“Add Python to PATH” option.**
 
 - ## 1-3 dependencies & libraries
  - Install virtualenv with `pip install virtualenv` From windows terminal (**powershell**)
@@ -46,7 +46,7 @@ Download latest [python3](https://www.python.org/downloads/windows/) and install
    `pip install PySide6 requests pypiwin32 setproctitle psutil yt_dlp pyinstaller`
 
  - Persepolis is gui for [**Aria2**](https://aria2.github.io) so we need it, you can download latest or specific version according to your system from [Aria2 release page](https://github.com/aria2/aria2/releases/)
- - Persepolis uses [**ffmpeg**](https://www.ffmpeg.org/) for mixing videos ([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download [ffmpeg](https://ffmpeg.zeranoe.com/builds](https://github.com/BtbN/FFmpeg-Builds/releases)/) (we use latest gpl version).
+ - Persepolis uses [**ffmpeg**](https://www.ffmpeg.org/) for mixing videos ([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download [ffmpeg](https://github.com/BtbN/FFmpeg-Builds/releases) (we use latest gpl version).
  - Persepolis uses [**sthp**](https://github.com/KaranGauswami/socks-to-http-proxy/) to enable socks proxy option, so download the binary from [releases page](https://github.com/KaranGauswami/socks-to-http-proxy/releases)
 
 # step 2: test and run
