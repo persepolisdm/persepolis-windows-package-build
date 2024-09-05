@@ -1,5 +1,5 @@
 #define MyAppName "Persepolis Download Manager"
-#define MyAppVersion "4.1.0.0"
+#define MyAppVersion "5.0.0.0"
 #define MyAppPublisher "Persepolis Team"
 #define MyAppURL "https://persepolisdm.github.io/"
 #define MyAppExeName "Persepolis Download Manager.exe"
@@ -38,11 +38,9 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 
 [Files]
 Source: "..\persepolis\dist\Persepolis Download Manager.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\persepolis\dist\aria2c.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\persepolis\dist\ffmpeg.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\persepolis\dist\PersepolisBI.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "README.html"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
