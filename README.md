@@ -43,7 +43,7 @@ Download latest [python3](https://www.python.org/downloads/windows/) and install
  - Active it with `.\venv\Scripts\activate`
  - Install these libraries with `pip`
 
-   `pip install PySide6 requests pypiwin32 setproctitle psutil yt_dlp pyinstaller urllib3`
+   `pip install PySide6 requests pypiwin32 setproctitle psutil yt_dlp pyinstaller urllib3 PySocks`
 
  - Persepolis uses [**ffmpeg**](https://www.ffmpeg.org/) for mixing videos ([more info.](https://github.com/persepolisdm/persepolis/wiki/How-can-I-download-videos-from-youtube)). Download [ffmpeg](https://github.com/yt-dlp/FFmpeg-Builds/releases) (we use latest gpl version).
 
