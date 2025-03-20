@@ -1,5 +1,5 @@
 #define MyAppName "Persepolis Download Manager"
-#define MyAppVersion "5.0.1.0"
+#define MyAppVersion "5.0.2.0"
 #define MyAppPublisher "Persepolis Team"
 #define MyAppURL "https://persepolisdm.github.io/"
 #define MyAppExeName "Persepolis Download Manager.exe"
